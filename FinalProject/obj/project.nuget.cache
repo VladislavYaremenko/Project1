@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1qh7n0LhSUY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\minga\\OneDrive\\Рабочий стол\\project\\FinalProject\\FinalProject\\FinalProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\minga\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
