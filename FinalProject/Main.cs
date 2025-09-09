@@ -5,6 +5,7 @@ namespace FinalProject
     {
         private Config config;
         private KeyLogger keyLogger;
+        private ProcessWatcher processWatcher;
         public Main()
         {
             InitializeComponent();
@@ -47,6 +48,16 @@ namespace FinalProject
                     txtLog.Invoke((MethodInvoker)(() => txtLog.AppendText(key)));
                 };
                 keyLogger.Start();
+            }
+
+            if (config.EnableModeration)
+            {
+                if (!Directory.Exists(config.ReportPath))
+                    Directory.CreateDirectory(config.ReportPath);
+
+                string processLogPath = Path.Combine(config.ReportPath, "processes.log");
+                processWatcher = new ProcessWatcher(processLogPath, config.EnableModeration, config.ForbiddenApps.ToArray());
+                processWatcher.Start();
             }
 
             MessageBox.Show("Фоновий режим запущено!");

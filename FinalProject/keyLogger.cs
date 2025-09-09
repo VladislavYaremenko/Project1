@@ -117,4 +117,3 @@ namespace FinalProject
         private static extern IntPtr GetKeyboardLayout(uint idThread);
     }
 }
-
