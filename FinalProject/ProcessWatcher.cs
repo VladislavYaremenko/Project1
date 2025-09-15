@@ -49,6 +49,7 @@ namespace FinalProject
             File.AppendAllText(logPath, logEntry + Environment.NewLine);
 
             
+            string moderationLogPath = Path.Combine(Path.GetDirectoryName(logPath), "moderation.log");
 
             if (enableModeration && IsForbidden(processName))
             {
@@ -60,7 +61,12 @@ namespace FinalProject
                     }
 
                     string blockEntry = $"{startTime:yyyy-MM-dd HH:mm:ss} - BLOCKED {processName}";
+
+                    
                     File.AppendAllText(logPath, blockEntry + Environment.NewLine);
+
+                    File.AppendAllText(moderationLogPath, blockEntry + Environment.NewLine);
+
                     ProcessLogged?.Invoke(this, blockEntry);
                 }
                 catch (Exception ex)
@@ -79,6 +85,9 @@ namespace FinalProject
             }
             return false;
         }
+
+
+
     }
 }
 

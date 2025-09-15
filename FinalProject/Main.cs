@@ -68,6 +68,18 @@ namespace FinalProject
             Application.Exit();
         }
 
-        private void Main_Load(object sender, EventArgs e){}
+        private void Main_Load(object sender, EventArgs e) { }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            if (config == null || string.IsNullOrWhiteSpace(config.ReportPath))
+            {
+                MessageBox.Show("Спочатку запустіть і налаштуйте програму!");
+                return;
+            }
+
+            var reports = new ReportsForm(config.ReportPath);
+            reports.ShowDialog();
+        }
     }
 }

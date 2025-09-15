@@ -32,12 +32,13 @@
             btnExit = new Button();
             btnSettings = new Button();
             txtLog = new TextBox();
+            btnReports = new Button();
             SuspendLayout();
             // 
             // btnStart
             // 
             btnStart.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            btnStart.Location = new Point(162, 114);
+            btnStart.Location = new Point(162, 66);
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(157, 49);
             btnStart.TabIndex = 0;
@@ -48,7 +49,7 @@
             // btnExit
             // 
             btnExit.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            btnExit.Location = new Point(162, 276);
+            btnExit.Location = new Point(162, 300);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(157, 49);
             btnExit.TabIndex = 1;
@@ -59,7 +60,7 @@
             // btnSettings
             // 
             btnSettings.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            btnSettings.Location = new Point(162, 195);
+            btnSettings.Location = new Point(162, 141);
             btnSettings.Name = "btnSettings";
             btnSettings.Size = new Size(157, 49);
             btnSettings.TabIndex = 2;
@@ -76,11 +77,23 @@
             txtLog.Size = new Size(282, 144);
             txtLog.TabIndex = 3;
             // 
+            // btnReports
+            // 
+            btnReports.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold);
+            btnReports.Location = new Point(162, 221);
+            btnReports.Name = "btnReports";
+            btnReports.Size = new Size(157, 49);
+            btnReports.TabIndex = 4;
+            btnReports.Text = "Звiти";
+            btnReports.UseVisualStyleBackColor = true;
+            btnReports.Click += btnReports_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(503, 526);
+            Controls.Add(btnReports);
             Controls.Add(txtLog);
             Controls.Add(btnSettings);
             Controls.Add(btnExit);
@@ -99,5 +112,6 @@
         private Button btnExit;
         private Button btnSettings;
         private TextBox txtLog;
+        private Button btnReports;
     }
 }
